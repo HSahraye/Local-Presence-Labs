@@ -20,7 +20,7 @@ export default function ContactPage() {
             title="Let’s improve your online presence."
             description="Tell us what you’re trying to improve — website, Google, ads, reviews, or lead flow."
           />
-          <div className="mt-8 space-y-4 text-sm text-[#334155]">
+          <div className="mt-8 space-y-4 rounded-2xl border border-[#1C768F]/20 bg-white p-5 text-sm text-[#334155]">
             <p>
               <span className="font-semibold text-[#032539]">Email: </span>
               hello@localpresencelabs.com

@@ -1,42 +1,97 @@
 import type { Metadata } from "next";
+import type { SVGProps } from "react";
 import {
-  AlertTriangle,
-  BarChart3,
-  Megaphone,
+  BadgeCheck,
+  BriefcaseBusiness,
+  CalendarClock,
+  ChartNoAxesColumnIncreasing,
+  CircleCheckBig,
+  HeartPulse,
+  Home,
   Search,
   ShieldCheck,
-  Waypoints,
+  Sparkles,
+  UserRound,
+  Wrench,
 } from "lucide-react";
 
 import { AnimatedSection } from "@/components/animated-section";
-import { CaseStudyCard } from "@/components/case-study-card";
+import { BackgroundGrid } from "@/components/background-grid";
+import { BentoGrid } from "@/components/bento-grid";
+import { BeforeAfterPanel } from "@/components/before-after-panel";
 import { CTAButton } from "@/components/cta-button";
+import { CTASection } from "@/components/cta-section";
+import { EnhancedCaseStudyCard } from "@/components/enhanced-case-study-card";
+import { EnhancedPackageCard } from "@/components/enhanced-package-card";
 import { FAQAccordion } from "@/components/faq-accordion";
+import { FloatingCard } from "@/components/floating-card";
+import { GradientBlob } from "@/components/gradient-blob";
 import { IndustryCard } from "@/components/industry-card";
-import { PackageCard } from "@/components/package-card";
-import { ProcessSteps } from "@/components/process-steps";
+import { Scorecard } from "@/components/scorecard";
+import { SectionEyebrow } from "@/components/section-eyebrow";
 import { SectionHeading } from "@/components/section-heading";
+import { Spotlight } from "@/components/spotlight";
+import { TimelineProcess } from "@/components/timeline-process";
 import { TrustChips } from "@/components/trust-chips";
 import { caseStudies } from "@/data/caseStudies";
 import { faqs } from "@/data/faqs";
-import { industries } from "@/data/industries";
+import { industryGroups } from "@/data/industries";
 import { packages } from "@/data/packages";
 
-const problems = [
-  "Outdated or missing website",
-  "Weak Google Business Profile",
-  "No clear call/text/book buttons",
-  "Ads sending traffic to bad pages",
-  "No tracking for calls or leads",
-  "Few reviews or weak trust signals",
+const bentoItems = [
+  {
+    title: "Website that converts",
+    description: "Clear messaging, modern design, and conversion-focused calls to action.",
+    icon: Home,
+  },
+  {
+    title: "Google visibility",
+    description: "Stronger map and local search presence through profile and SEO improvements.",
+    icon: Search,
+  },
+  {
+    title: "Ads that send traffic to the right page",
+    description: "Campaigns and landing experiences aligned around lead generation.",
+    icon: ChartNoAxesColumnIncreasing,
+  },
+  {
+    title: "Review and trust signals",
+    description: "Reputation systems and trust-building sections that reduce buyer hesitation.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Lead tracking",
+    description: "Track calls, forms, and quote requests so decisions are backed by data.",
+    icon: CircleCheckBig,
+  },
+  {
+    title: "Booking and follow-up systems",
+    description: "Simple workflows to capture leads and move prospects into appointments.",
+    icon: CalendarClock,
+  },
 ];
 
-const pillars = [
-  { title: "Professional Website", icon: Waypoints },
-  { title: "Google Visibility", icon: Search },
-  { title: "Paid Ads", icon: Megaphone },
-  { title: "Lead Systems", icon: BarChart3 },
+const scoreItems = [
+  { label: "Website clarity", score: 48 },
+  { label: "Mobile experience", score: 56 },
+  { label: "Google Business Profile", score: 41 },
+  { label: "Local SEO", score: 39 },
+  { label: "Reviews", score: 45 },
+  { label: "Paid ads", score: 34 },
+  { label: "Lead tracking", score: 29 },
+  { label: "Follow-up system", score: 32 },
 ];
+
+const trustCards = [
+  "Clear pricing ranges",
+  "Local business focus",
+  "Website + Google + ads together",
+  "Honest project examples",
+  "Conversion-first builds",
+  "Tracking-ready setup",
+];
+
+const industryIcons = [Wrench, UserRound, CarIcon, BriefcaseBusiness, UtensilsIcon, HeartPulse];
 
 export const metadata: Metadata = {
   title:
@@ -48,26 +103,29 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden border-b border-[#1C768F]/10 bg-gradient-to-br from-white via-[#F8FAFC] to-[#dff2f7]">
-        <div className="container-shell py-16 md:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#021923] via-[#032539] to-[#0b3345] py-16 text-white md:py-24">
+        <BackgroundGrid />
+        <Spotlight className="-top-16" />
+        <GradientBlob className="-left-8 top-16 h-44 w-44" />
+        <GradientBlob className="bottom-8 right-8 h-40 w-40" color="from-[#FA991C]/30 to-[#CC4D35]/20" />
+        <div className="container-shell relative z-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <AnimatedSection>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1C768F]">
-              Local Presence Labs
-            </p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-bold tracking-tight text-[#032539] md:text-6xl">
+            <SectionEyebrow className="border-[#1C768F]/40 bg-[#1C768F]/15 text-[#9fdfef]">
+              Online presence systems for local businesses
+            </SectionEyebrow>
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
               Get Found, Trusted, and Booked Online
             </h1>
-            <p className="mt-6 max-w-3xl text-lg text-[#334155]">
-              We help local service businesses build a professional online presence, show
-              up on Google, and turn visitors into calls, quote requests, and booked
-              appointments.
+            <p className="mt-5 max-w-2xl text-lg text-white/85">
+              We help local service businesses build a professional website, improve Google
+              visibility, run smarter ads, and turn visitors into real leads.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CTAButton href="/free-audit" size="lg" withArrow>
                 Get a Free Online Presence Audit
               </CTAButton>
-              <CTAButton href="/services" variant="outline" size="lg">
-                View Services
+              <CTAButton href="/packages" variant="outline" size="lg" className="border-white/30 bg-white/5 text-white hover:bg-white/10">
+                See Packages
               </CTAButton>
             </div>
             <div className="mt-8">
@@ -83,118 +141,128 @@ export default function HomePage() {
               />
             </div>
           </AnimatedSection>
+          <AnimatedSection>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <FloatingCard label="Website Audit" icon={BadgeCheck} delay={0.05} />
+              <FloatingCard label="Google Visibility" icon={Search} delay={0.1} />
+              <FloatingCard label="Lead Tracking" icon={ChartNoAxesColumnIncreasing} delay={0.15} />
+              <FloatingCard label="Review Requests" icon={ShieldCheck} delay={0.2} />
+              <FloatingCard label="Booked Appointments" icon={CalendarClock} delay={0.25} />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      <section className="container-shell py-16">
+      <section className="container-shell py-16 md:py-20">
         <AnimatedSection>
           <SectionHeading
-            title="Your business may be great, but your online presence might be costing you customers."
-            centered
+            eyebrow="System"
+            title="The full online presence system your business actually needs"
+            description="Most local businesses do not need more random marketing tasks. They need a connected system that turns visibility into booked work."
           />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {problems.map((item) => (
-              <article
-                key={item}
-                className="rounded-2xl border border-[#1C768F]/20 bg-white p-5 shadow-sm"
-              >
-                <AlertTriangle className="h-5 w-5 text-[#FA991C]" />
-                <p className="mt-3 font-medium text-[#032539]">{item}</p>
-              </article>
-            ))}
+          <div className="mt-8">
+            <BentoGrid items={bentoItems} />
           </div>
         </AnimatedSection>
       </section>
 
-      <section className="border-y border-[#1C768F]/10 bg-white py-16">
-        <div className="container-shell">
-          <AnimatedSection>
-            <SectionHeading title="We build the full system, not just a website." centered />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {pillars.map((pillar) => (
-                <article
-                  key={pillar.title}
-                  className="rounded-2xl border border-[#1C768F]/20 bg-[#F8FAFC] p-5 text-center"
-                >
-                  <pillar.icon className="mx-auto h-6 w-6 text-[#1C768F]" />
-                  <p className="mt-3 font-semibold text-[#032539]">{pillar.title}</p>
-                </article>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
+      <section className="container-shell py-4 md:py-8">
+        <AnimatedSection>
+          <Scorecard items={scoreItems} />
+        </AnimatedSection>
       </section>
 
       <section className="container-shell py-16">
         <AnimatedSection>
           <SectionHeading
             eyebrow="Packages"
-            title="Simple packages built for real local business growth."
-            centered
+            title="Choose the growth model that fits your current stage"
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {packages.map((pkg, index) => (
-              <PackageCard key={pkg.name} pkg={pkg} highlight={index === 1} />
+              <EnhancedPackageCard key={pkg.name} pkg={pkg} index={index} popular={index === 1} />
             ))}
           </div>
         </AnimatedSection>
       </section>
 
-      <section className="border-y border-[#1C768F]/10 bg-white py-16">
-        <div className="container-shell">
-          <AnimatedSection>
-            <SectionHeading eyebrow="Industries" title="Who we help" centered />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {industries.map((industry) => (
-                <IndustryCard key={industry} label={industry} />
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
+      <section className="container-shell py-4 md:py-8">
+        <AnimatedSection>
+          <CTASection />
+        </AnimatedSection>
       </section>
 
       <section className="container-shell py-16">
         <AnimatedSection>
-          <SectionHeading eyebrow="Case Studies" title="Early portfolio projects and builds" />
-          <p className="mt-3 max-w-3xl text-[#334155]">
-            These are starter portfolio and internal/demo project examples that show our
-            process and execution approach. We avoid inflated or fake performance claims.
-          </p>
+          <BeforeAfterPanel />
+        </AnimatedSection>
+      </section>
+
+      <section className="container-shell py-16">
+        <AnimatedSection>
+          <SectionHeading eyebrow="Process" title="From audit to optimization with clear milestones" />
+          <div className="mt-8">
+            <TimelineProcess />
+          </div>
+        </AnimatedSection>
+      </section>
+
+      <section className="container-shell py-16">
+        <AnimatedSection>
+          <SectionHeading
+            eyebrow="Case Studies"
+            title="Selected Builds & Growth Systems"
+            description="Real builds, platforms, and local business systems showing how we think through online presence, booking flow, trust, and conversion."
+          />
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {caseStudies.map((item) => (
-              <CaseStudyCard key={item.title} caseStudy={item} compact />
+              <EnhancedCaseStudyCard key={item.title} caseStudy={item} />
             ))}
           </div>
         </AnimatedSection>
       </section>
 
-      <section className="border-y border-[#1C768F]/10 bg-white py-16">
-        <div className="container-shell">
-          <AnimatedSection>
-            <SectionHeading eyebrow="Process" title="Audit to Optimization" centered />
-            <div className="mt-10">
-              <ProcessSteps />
-            </div>
-          </AnimatedSection>
-        </div>
+      <section className="container-shell py-16">
+        <AnimatedSection>
+          <SectionHeading eyebrow="Industries" title="Who we support" />
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {industryGroups.map((group, index) => (
+              <IndustryCard
+                key={group.group}
+                label={group.group}
+                items={group.items}
+                icon={industryIcons[index] ?? Wrench}
+              />
+            ))}
+          </div>
+        </AnimatedSection>
       </section>
 
       <section className="container-shell py-16">
         <AnimatedSection>
-          <div className="rounded-3xl bg-gradient-to-r from-[#032539] to-[#1C768F] p-8 text-white md:p-10">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Want to know what your online presence is missing?
-            </h2>
-            <p className="mt-4 max-w-3xl text-white/90">
-              Get a free review of your website, Google Business Profile, ads, and lead
-              flow. We&apos;ll send you a simple action plan with the biggest fixes.
-            </p>
-            <div className="mt-7">
-              <CTAButton href="/free-audit" variant="default" withArrow>
-                Request Free Audit
-              </CTAButton>
+          <div className="rounded-3xl border border-[#1C768F]/20 bg-white p-7 shadow-sm md:p-8">
+            <SectionHeading
+              eyebrow="Trust"
+              title="Built for businesses that need practical growth, not marketing fluff."
+            />
+            <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {trustCards.map((item) => (
+                <div key={item} className="rounded-xl border border-[#1C768F]/15 bg-[#F8FAFC] p-4 text-sm font-medium text-[#032539]">
+                  {item}
+                </div>
+              ))}
             </div>
+            <p className="mt-6 text-sm text-[#334155]">
+              No fake guarantees. No confusing retainers. Just a practical plan to improve
+              how customers find, trust, and contact your business.
+            </p>
           </div>
+        </AnimatedSection>
+      </section>
+
+      <section className="container-shell py-4 md:py-8">
+        <AnimatedSection>
+          <CTASection />
         </AnimatedSection>
       </section>
 
@@ -204,18 +272,30 @@ export default function HomePage() {
           <div className="mt-8 rounded-2xl border border-[#1C768F]/20 bg-white px-6">
             <FAQAccordion items={faqs} />
           </div>
+          <div className="mt-8 rounded-2xl border border-[#1C768F]/20 bg-white p-6 text-center">
+            <Sparkles className="mx-auto h-5 w-5 text-[#1C768F]" />
+            <p className="mt-3 text-sm text-[#334155]">
+              Get Found. Get Trusted. Get Booked. A connected local growth system beats one-off tactics.
+            </p>
+          </div>
         </AnimatedSection>
       </section>
-
-      <section className="container-shell">
-        <div className="rounded-2xl border border-[#1C768F]/20 bg-white p-6 text-center">
-          <ShieldCheck className="mx-auto h-6 w-6 text-[#1C768F]" />
-          <p className="mt-3 text-sm text-[#334155]">
-            Get Found. Get Trusted. Get Booked. We focus on practical growth systems for
-            local businesses that need measurable lead outcomes.
-          </p>
-        </div>
-      </section>
     </div>
+  );
+}
+
+function CarIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <path d="M3 13l2-5h14l2 5M5 13h14M6 18h.01M18 18h.01M4 13v5h2M18 18h2v-5" />
+    </svg>
+  );
+}
+
+function UtensilsIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <path d="M3 2v7a4 4 0 0 0 8 0V2M7 2v20M14 2h1a4 4 0 0 1 4 4v16" />
+    </svg>
   );
 }

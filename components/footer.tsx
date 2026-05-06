@@ -18,7 +18,6 @@ export function Footer() {
             Quick Links
           </p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-[#334155]">
-            <Link href="/services">Services</Link>
             <Link href="/packages">Packages</Link>
             <Link href="/case-studies">Case Studies</Link>
             <Link href="/free-audit">Free Audit</Link>

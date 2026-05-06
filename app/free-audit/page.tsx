@@ -26,7 +26,7 @@ export default function FreeAuditPage() {
           <SectionHeading
             eyebrow="Free Audit"
             title="Get a focused online presence action plan."
-            description="We review your current setup and identify the highest-impact fixes to help your business get more qualified local leads."
+            description="Tell us where your business shows up online today. We’ll review your website, Google presence, ads, reviews, and lead flow."
           />
           <div className="mt-8 space-y-5 text-sm text-[#334155]">
             <InfoBlock

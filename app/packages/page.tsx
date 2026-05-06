@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
-import { PackageCard } from "@/components/package-card";
-import { SectionHeading } from "@/components/section-heading";
+import { BackgroundGrid } from "@/components/background-grid";
+import { EnhancedPackageCard } from "@/components/enhanced-package-card";
+import { GradientBlob } from "@/components/gradient-blob";
+import { SectionEyebrow } from "@/components/section-eyebrow";
+import { Spotlight } from "@/components/spotlight";
 import { packages } from "@/data/packages";
 
 export const metadata: Metadata = {
@@ -12,21 +15,36 @@ export const metadata: Metadata = {
 
 export default function PackagesPage() {
   return (
-    <div className="container-shell py-16">
-      <SectionHeading
-        eyebrow="Packages"
-        title="Clear packages to match your growth stage."
-        description="Choose the level of support that fits your current goals. Final pricing depends on scope, competition, service area, ad budget, and the current state of your online presence."
-      />
-      <div className="mt-10 grid gap-6 lg:grid-cols-3">
-        {packages.map((pkg, index) => (
-          <PackageCard key={pkg.name} pkg={pkg} highlight={index === 1} />
-        ))}
-      </div>
-      <p className="mt-8 rounded-xl border border-[#1C768F]/20 bg-white p-4 text-sm text-[#334155]">
-        Final pricing depends on scope, competition, service area, ad budget, and the
-        current state of your online presence.
-      </p>
+    <div className="pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#021923] via-[#032539] to-[#0d3447] py-16 text-white">
+        <BackgroundGrid />
+        <Spotlight className="-top-20" />
+        <GradientBlob className="right-6 top-8 h-44 w-44" />
+        <div className="container-shell relative z-10">
+          <SectionEyebrow className="border-[#1C768F]/40 bg-[#1C768F]/15 text-[#9fdfef]">
+            Packages
+          </SectionEyebrow>
+          <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
+            Clear packages to match your growth stage
+          </h1>
+          <p className="mt-4 max-w-3xl text-white/85">
+            Choose the level of support that fits your current goals. Final pricing
+            depends on scope, competition, service area, ad budget, and current online
+            presence quality.
+          </p>
+        </div>
+      </section>
+      <section className="container-shell -mt-8 relative z-10">
+        <div className="grid gap-6 lg:grid-cols-3">
+          {packages.map((pkg, index) => (
+            <EnhancedPackageCard key={pkg.name} pkg={pkg} index={index} popular={index === 1} />
+          ))}
+        </div>
+        <p className="mt-8 rounded-xl border border-[#1C768F]/20 bg-white p-4 text-sm text-[#334155]">
+          Final pricing depends on scope, competition, service area, ad budget, and the
+          current state of your online presence.
+        </p>
+      </section>
     </div>
   );
 }

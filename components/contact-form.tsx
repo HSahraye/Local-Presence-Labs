@@ -16,9 +16,9 @@ export function ContactForm() {
   };
 
   return (
-    <div className="rounded-2xl border border-[#1C768F]/20 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-[#1C768F]/20 bg-white p-6 shadow-[0_14px_30px_rgba(2,25,35,0.08)] md:p-8">
       {sent ? (
-        <div className="rounded-xl bg-[#F8FAFC] p-5 text-[#032539]">
+        <div className="rounded-2xl border border-[#1C768F]/20 bg-[#F8FAFC] p-6 text-[#032539]">
           <p className="text-lg font-semibold">Message sent successfully.</p>
           <p className="mt-2 text-sm text-[#334155]">
             We will reply shortly to discuss your goals and best next steps.
@@ -28,7 +28,11 @@ export function ContactForm() {
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <form onSubmit={handleSubmit} className="grid gap-5">
+          <p className="text-sm text-[#334155]">
+            Tell us what you want to improve first and we&apos;ll recommend the fastest
+            path forward.
+          </p>
           <FormField label="Name" name="name" required />
           <FormField label="Business Name" name="businessName" required />
           <FormField label="Email" name="email" type="email" required />
@@ -42,8 +46,11 @@ export function ContactForm() {
               name="message"
               required
               rows={4}
-              className="rounded-xl border border-[#1C768F]/25 px-4 py-3 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+              className="rounded-xl border border-[#1C768F]/25 bg-white px-4 py-3 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
             />
+            <p className="text-xs text-[#64748b]">
+              Include your website URL and what is currently blocking growth.
+            </p>
           </div>
           <Button type="submit">Send Message</Button>
         </form>
@@ -73,7 +80,7 @@ function FormField({
         name={name}
         type={type}
         required={required}
-        className="h-11 rounded-xl border border-[#1C768F]/25 px-4 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+        className="h-11 rounded-xl border border-[#1C768F]/25 bg-white px-4 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
       />
     </div>
   );

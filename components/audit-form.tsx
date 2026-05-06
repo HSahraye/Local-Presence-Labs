@@ -18,12 +18,12 @@ export function AuditForm() {
   };
 
   return (
-    <div className="rounded-2xl border border-[#1C768F]/20 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-[#1C768F]/20 bg-white p-6 shadow-[0_14px_30px_rgba(2,25,35,0.08)] md:p-8">
       {status === "success" ? (
-        <div className="rounded-xl bg-[#F8FAFC] p-5 text-[#032539]">
+        <div className="rounded-2xl border border-[#1C768F]/20 bg-[#F8FAFC] p-6 text-[#032539]">
           <p className="text-lg font-semibold">Audit request received.</p>
           <p className="mt-2 text-sm text-[#334155]">
-            Thanks for sharing your details. We will follow up with your action
+            Thanks for sharing your details. We will follow up with your initial action
             plan shortly.
           </p>
           <Button className="mt-4" variant="secondary" onClick={() => setStatus("idle")}>
@@ -31,7 +31,11 @@ export function AuditForm() {
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <form onSubmit={handleSubmit} className="grid gap-5">
+          <p className="text-sm text-[#334155]">
+            Tell us where your business shows up online today. We&apos;ll review your
+            website, Google presence, ads, reviews, and lead flow.
+          </p>
           <FormField label="Name" name="name" required />
           <FormField label="Business Name" name="businessName" required />
           <FormField label="Website URL" name="websiteUrl" type="url" required />
@@ -53,11 +57,14 @@ export function AuditForm() {
               name="message"
               required
               rows={4}
-              className="rounded-xl border border-[#1C768F]/25 px-4 py-3 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+              className="rounded-xl border border-[#1C768F]/25 bg-white px-4 py-3 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
             />
+            <p className="text-xs text-[#64748b]">
+              Share any context on your current website, ads, or lead flow.
+            </p>
           </div>
           <Button type="submit" className="mt-2">
-            Request Free Audit
+            Get My Free Audit
           </Button>
         </form>
       )}
@@ -86,7 +93,7 @@ function FormField({
         name={name}
         type={type}
         required={required}
-        className="h-11 rounded-xl border border-[#1C768F]/25 px-4 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+        className="h-11 rounded-xl border border-[#1C768F]/25 bg-white px-4 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
       />
     </div>
   );

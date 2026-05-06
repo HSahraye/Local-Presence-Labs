@@ -1,8 +1,9 @@
 export type CaseStudy = {
   title: string;
+  category: string;
   description: string;
   challenge: string;
-  built: string;
+  built: string[];
   value: string;
   tools: string[];
 };
@@ -10,38 +11,65 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     title: "Local Tech Support Website Launch",
+    category: "Local Service Business",
     description:
-      "Built a local service website with booking, service packages, payment flow, Google Business copy, and conversion-focused CTAs.",
+      "A home tech support brand needed a clearer way to present services, pricing, booking, and trust to local customers.",
     challenge:
-      "The service offering was unclear online and the booking journey required too many steps.",
-    built:
-      "A clean service website with structured package sections, booking flow, payment path integration, and trust-focused local copy.",
+      "The service offer and booking journey were difficult to understand, which made it harder for local customers to request help quickly.",
+    built: [
+      "Conversion-focused website",
+      "Service package structure",
+      "Booking flow",
+      "Payment-ready customer journey",
+      "Google Business profile copy",
+      "CTA and trust sections",
+    ],
     value:
-      "Created a clear customer path from first visit to booking request while improving credibility for local search visitors.",
-    tools: ["Next.js", "TypeScript", "Tailwind CSS", "Form integrations", "Google Business copy"],
+      "Created a more professional online presence and made it easier for customers to understand services and request help.",
+    tools: [
+      "Website",
+      "Calendly",
+      "Stripe/Square-ready flow",
+      "Google Business Profile",
+      "SEO copy",
+    ],
   },
   {
     title: "Mobile Service Brand Optimization",
+    category: "Mobile Local Service",
     description:
-      "Improved mobile layout, service-package clarity, booking flow, and customer decision path for a local mobile service business.",
+      "A mobile service business had overlapping sections, unclear service flow, and weak mobile UX.",
     challenge:
-      "Most traffic came from mobile, but the old experience made it difficult to understand services and request a booking.",
-    built:
-      "A mobile-first interface with stronger section hierarchy, streamlined package presentation, and clearer action buttons.",
+      "Mobile traffic was high, but the old layout caused confusion and made the path from interest to booking inconsistent.",
+    built: [
+      "Cleaner homepage structure",
+      "Better package presentation",
+      "Improved booking CTA flow",
+      "Mobile-first layout feedback",
+      "Trust and conversion improvements",
+    ],
     value:
-      "Reduced friction for mobile visitors and made it easier for prospects to move from browsing to contacting.",
-    tools: ["UX audit", "Landing page optimization", "Conversion copywriting", "CTA testing"],
+      "Reduced confusion, clarified the offer, and improved the customer path from interest to booking.",
+    tools: ["Website UX", "Service packages", "Mobile optimization", "Booking flow"],
   },
   {
     title: "Student Marketplace Platform",
+    category: "Full-Stack Web Platform",
     description:
-      "Built and deployed a full-stack marketplace concept using React, Flask, Netlify, and Render.",
+      "A marketplace concept needed a more enterprise-style platform with listings, profiles, messages, admin trust features, and deployed frontend/backend.",
     challenge:
-      "Needed a practical MVP that could support listings, user flow experiments, and production deployment quickly.",
-    built:
-      "A full-stack prototype with frontend marketplace views, backend API workflows, and cloud deployment setup.",
+      "The project needed a complete architecture from interface to API with practical deployment and trust-focused admin workflows.",
+    built: [
+      "React/TypeScript frontend",
+      "Flask API backend",
+      "Listing detail API integration",
+      "Profile pages",
+      "Admin trust dashboard",
+      "Netlify frontend deployment",
+      "Render backend deployment",
+    ],
     value:
-      "Demonstrated end-to-end product execution and rapid iteration capability for digital platform builds.",
-    tools: ["React", "Flask", "Netlify", "Render", "REST APIs"],
+      "Demonstrated ability to plan, build, connect, and deploy a full web platform beyond simple brochure websites.",
+    tools: ["React", "TypeScript", "Flask", "Netlify", "Render", "API integration"],
   },
 ];

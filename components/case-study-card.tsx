@@ -19,7 +19,7 @@ export function CaseStudyCard({
           </p>
           <p>
             <span className="font-semibold text-[#032539]">What was built: </span>
-            {caseStudy.built}
+            {caseStudy.built.join(", ")}
           </p>
           <p>
             <span className="font-semibold text-[#032539]">Business value: </span>

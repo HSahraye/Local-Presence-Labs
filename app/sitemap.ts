@@ -5,7 +5,6 @@ const baseUrl = "https://localpresencelabs.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
-    "/services",
     "/packages",
     "/case-studies",
     "/free-audit",

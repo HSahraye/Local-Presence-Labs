@@ -14,7 +14,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#1C768F]/15 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[#1C768F]/15 bg-[#F8FAFC]/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
         <Link href="/" className="text-lg font-bold text-[#032539]">
           Local Presence Labs
@@ -33,7 +33,7 @@ export function Header() {
             </Link>
           ))}
           <CTAButton href="/free-audit" size="sm">
-            Get a Free Audit
+            Get My Free Audit
           </CTAButton>
         </nav>
         <button
@@ -64,7 +64,7 @@ export function Header() {
               </Link>
             ))}
             <CTAButton href="/free-audit" className="mt-2 w-full" size="sm">
-              Get a Free Audit
+              Get My Free Audit
             </CTAButton>
           </nav>
         </div>
