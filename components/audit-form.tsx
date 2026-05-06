@@ -4,17 +4,49 @@ import { FormEvent, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-type Status = "idle" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
+const fallbackEmail = "Sahrayeh@bayareatechhelp.com";
+
+function encodeFormData(formData: FormData) {
+  const params = new URLSearchParams();
+
+  for (const [key, value] of formData.entries()) {
+    if (typeof value === "string") {
+      params.append(key, value);
+    }
+  }
+
+  return params.toString();
+}
 
 export function AuditForm() {
   const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatus("success");
-    event.currentTarget.reset();
+    setStatus("submitting");
 
-    // TODO: Connect to Formspree, Netlify Forms, Resend, or backend API.
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeFormData(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify form submission failed");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+
+    // TODO: Alternative providers if needed: Formspree, Resend, or custom API endpoint.
   };
 
   return (
@@ -23,15 +55,29 @@ export function AuditForm() {
         <div className="rounded-2xl border border-[#1C768F]/20 bg-[#F8FAFC] p-6 text-[#032539]">
           <p className="text-lg font-semibold">Audit request received.</p>
           <p className="mt-2 text-sm text-[#334155]">
-            Thanks for sharing your details. We will follow up with your initial action
-            plan shortly.
+            Thanks — your audit request was sent. We&apos;ll review your online presence
+            and follow up soon.
           </p>
           <Button className="mt-4" variant="secondary" onClick={() => setStatus("idle")}>
             Submit Another Request
           </Button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="grid gap-5">
+        <form
+          name="free-audit"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          className="grid gap-5"
+        >
+          <input type="hidden" name="form-name" value="free-audit" />
+          <p className="hidden">
+            <label>
+              Don&apos;t fill this out if you&apos;re human:
+              <input name="bot-field" />
+            </label>
+          </p>
           <p className="text-sm text-[#334155]">
             Tell us where your business shows up online today. We&apos;ll review your
             website, Google presence, ads, reviews, and lead flow.
@@ -41,13 +87,13 @@ export function AuditForm() {
           <FormField label="Website URL" name="websiteUrl" type="url" required />
           <FormField
             label="Google Business Profile URL or Business Location"
-            name="gbp"
+            name="googleBusinessProfileOrLocation"
             required
           />
           <FormField label="Email" name="email" type="email" required />
           <FormField label="Phone (optional)" name="phone" />
-          <FormField label="Main Goal" name="goal" required />
-          <FormField label="Current Monthly Ad Budget (optional)" name="adBudget" />
+          <FormField label="Main Goal" name="mainGoal" required />
+          <FormField label="Current Monthly Ad Budget (optional)" name="monthlyAdBudget" />
           <div className="grid gap-2">
             <label htmlFor="message" className="text-sm font-medium text-[#032539]">
               Message
@@ -63,8 +109,17 @@ export function AuditForm() {
               Share any context on your current website, ads, or lead flow.
             </p>
           </div>
-          <Button type="submit" className="mt-2">
-            Get My Free Audit
+          {status === "error" ? (
+            <p className="text-sm text-[#CC4D35]">
+              Something went wrong. Please email{" "}
+              <a className="underline" href={`mailto:${fallbackEmail}`}>
+                {fallbackEmail}
+              </a>{" "}
+              directly.
+            </p>
+          ) : null}
+          <Button type="submit" className="mt-2" disabled={status === "submitting"}>
+            {status === "submitting" ? "Sending..." : "Get My Free Audit"}
           </Button>
         </form>
       )}

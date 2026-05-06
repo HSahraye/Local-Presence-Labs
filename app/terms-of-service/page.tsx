@@ -41,7 +41,11 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-base font-semibold text-[#032539]">Contact</h2>
           <p className="mt-2">
-            Questions about these terms can be sent to hello@localpresencelabs.com.
+            Questions about these terms can be sent to{" "}
+            <a href="mailto:Sahrayeh@bayareatechhelp.com" className="underline">
+              Sahrayeh@bayareatechhelp.com
+            </a>
+            .
           </p>
         </section>
       </div>

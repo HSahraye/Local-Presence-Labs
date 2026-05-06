@@ -40,7 +40,11 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2 className="text-base font-semibold text-[#032539]">Contact</h2>
           <p className="mt-2">
-            For privacy questions, email hello@localpresencelabs.com.
+            For privacy questions, email{" "}
+            <a href="mailto:Sahrayeh@bayareatechhelp.com" className="underline">
+              Sahrayeh@bayareatechhelp.com
+            </a>
+            .
           </p>
         </section>
       </div>

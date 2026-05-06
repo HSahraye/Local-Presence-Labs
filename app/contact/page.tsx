@@ -23,7 +23,9 @@ export default function ContactPage() {
           <div className="mt-8 space-y-4 rounded-2xl border border-[#1C768F]/20 bg-white p-5 text-sm text-[#334155]">
             <p>
               <span className="font-semibold text-[#032539]">Email: </span>
-              hello@localpresencelabs.com
+              <a href="mailto:Sahrayeh@bayareatechhelp.com" className="underline">
+                Sahrayeh@bayareatechhelp.com
+              </a>
             </p>
             <p>
               <span className="font-semibold text-[#032539]">Service area: </span>
