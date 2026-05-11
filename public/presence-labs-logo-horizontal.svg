@@ -1,0 +1,24 @@
+<svg width="1040" height="220" viewBox="0 0 1040 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Presence Labs Horizontal Primary Logo</title>
+  <desc id="logoDesc">Stylized gradient P icon with Presence Labs wordmark.</desc>
+  <defs>
+    <linearGradient id="plGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stylized P icon -->
+  <g transform="translate(24,20)">
+    <path d="M38 22C38 9.85 47.85 0 60 0H112C150.66 0 182 31.34 182 70C182 108.66 150.66 140 112 140H93V109H112C133.54 109 151 91.54 151 70C151 48.46 133.54 31 112 31H69V180H38V22Z" fill="url(#plGradient)"/>
+    <path d="M0 34C0 15.22 15.22 0 34 0H92V31H34C32.33 31 31 32.33 31 34V180H0V34Z" fill="url(#plGradient)"/>
+    <path d="M62 56C62 45.51 70.51 37 81 37H109C127.23 37 142 51.77 142 70C142 88.23 127.23 103 109 103H92V78H109C113.42 78 117 74.42 117 70C117 65.58 113.42 62 109 62H87V140H62V56Z" fill="#F8FAFC"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g fill="#0F172A">
+    <text x="258" y="122" font-family="Inter, SF Pro Display, Segoe UI, Arial, sans-serif" font-size="86" font-weight="700" letter-spacing="-0.6">
+      Presence Labs
+    </text>
+  </g>
+</svg>

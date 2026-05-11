@@ -34,18 +34,18 @@ export function TimelineProcess() {
       {steps.map((step, index) => (
         <article
           key={step.title}
-          className="relative rounded-2xl border border-[#1C768F]/20 bg-white p-5 shadow-sm"
+          className="relative rounded-2xl border border-[#3B82F6]/20 bg-white p-5 shadow-sm"
         >
           {index < steps.length - 1 ? (
-            <span className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-[#1C768F]/40 lg:block" />
+            <span className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-[#3B82F6]/40 lg:block" />
           ) : null}
-          <div className="w-fit rounded-xl bg-[#1C768F]/10 p-2.5">
-            <step.icon className="h-5 w-5 text-[#1C768F]" />
+          <div className="w-fit rounded-xl bg-[#3B82F6]/10 p-2.5">
+            <step.icon className="h-5 w-5 text-[#3B82F6]" />
           </div>
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#1C768F]">
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#3B82F6]">
             Step {index + 1}
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-[#032539]">{step.title}</h3>
+          <h3 className="mt-1 text-lg font-semibold text-[#0F172A]">{step.title}</h3>
           <p className="mt-2 text-sm text-[#334155]">{step.description}</p>
         </article>
       ))}

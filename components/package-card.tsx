@@ -14,16 +14,16 @@ export function PackageCard({ pkg, highlight = false }: PackageCardProps) {
     <article
       className={cn(
         "rounded-2xl border bg-white p-6 shadow-sm",
-        highlight ? "border-[#FA991C]/50 ring-2 ring-[#FA991C]/20" : "border-[#1C768F]/20",
+        highlight ? "border-[#7C3AED]/50 ring-2 ring-[#7C3AED]/20" : "border-[#3B82F6]/20",
       )}
     >
-      <h3 className="text-xl font-semibold text-[#032539]">{pkg.name}</h3>
-      <p className="mt-2 text-lg font-bold text-[#1C768F]">{pkg.price}</p>
+      <h3 className="text-xl font-semibold text-[#0F172A]">{pkg.name}</h3>
+      <p className="mt-2 text-lg font-bold text-[#3B82F6]">{pkg.price}</p>
       <p className="mt-3 text-[#334155]">{pkg.tagline}</p>
       <ul className="mt-5 space-y-2">
         {pkg.includes.map((item) => (
           <li key={item} className="flex items-start gap-2 text-sm text-[#334155]">
-            <Check className="h-4 w-4 mt-0.5 text-[#FA991C]" />
+            <Check className="h-4 w-4 mt-0.5 text-[#7C3AED]" />
             <span>{item}</span>
           </li>
         ))}

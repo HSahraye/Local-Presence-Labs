@@ -95,22 +95,22 @@ const industryIcons = [Wrench, UserRound, CarIcon, BriefcaseBusiness, UtensilsIc
 
 export const metadata: Metadata = {
   title:
-    "Local Presence Labs | Websites, Google Ads & Local SEO for Local Businesses",
+    "Presence Labs | Websites, Google Ads & Local SEO for Local Businesses",
   description:
-    "Local Presence Labs helps local service businesses build professional websites, improve Google visibility, run ads, and turn visitors into calls, quote requests, and booked appointments.",
+    "Presence Labs helps local service businesses build professional websites, improve Google visibility, run ads, and turn visitors into calls, quote requests, and booked appointments.",
 };
 
 export default function HomePage() {
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#021923] via-[#032539] to-[#0b3345] py-16 text-white md:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0F172A] to-[#1E1B4B] py-16 text-white md:py-24">
         <BackgroundGrid />
         <Spotlight className="-top-16" />
         <GradientBlob className="-left-8 top-16 h-44 w-44" />
-        <GradientBlob className="bottom-8 right-8 h-40 w-40" color="from-[#FA991C]/30 to-[#CC4D35]/20" />
+        <GradientBlob className="bottom-8 right-8 h-40 w-40" color="from-[#7C3AED]/30 to-[#7C3AED]/20" />
         <div className="container-shell relative z-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <AnimatedSection>
-            <SectionEyebrow className="border-[#1C768F]/40 bg-[#1C768F]/15 text-[#9fdfef]">
+            <SectionEyebrow className="border-[#3B82F6]/40 bg-[#3B82F6]/15 text-[#DBEAFE]">
               Online presence systems for local businesses
             </SectionEyebrow>
             <h1 className="mt-5 max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
@@ -240,14 +240,14 @@ export default function HomePage() {
 
       <section className="container-shell py-16">
         <AnimatedSection>
-          <div className="rounded-3xl border border-[#1C768F]/20 bg-white p-7 shadow-sm md:p-8">
+          <div className="rounded-3xl border border-[#3B82F6]/20 bg-white p-7 shadow-sm md:p-8">
             <SectionHeading
               eyebrow="Trust"
               title="Built for businesses that need practical growth, not marketing fluff."
             />
             <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
               {trustCards.map((item) => (
-                <div key={item} className="rounded-xl border border-[#1C768F]/15 bg-[#F8FAFC] p-4 text-sm font-medium text-[#032539]">
+                <div key={item} className="rounded-xl border border-[#3B82F6]/15 bg-[#F8FAFC] p-4 text-sm font-medium text-[#0F172A]">
                   {item}
                 </div>
               ))}
@@ -269,11 +269,11 @@ export default function HomePage() {
       <section className="container-shell py-16">
         <AnimatedSection>
           <SectionHeading eyebrow="FAQ" title="Common questions from local businesses" />
-          <div className="mt-8 rounded-2xl border border-[#1C768F]/20 bg-white px-6">
+          <div className="mt-8 rounded-2xl border border-[#3B82F6]/20 bg-white px-6">
             <FAQAccordion items={faqs} />
           </div>
-          <div className="mt-8 rounded-2xl border border-[#1C768F]/20 bg-white p-6 text-center">
-            <Sparkles className="mx-auto h-5 w-5 text-[#1C768F]" />
+          <div className="mt-8 rounded-2xl border border-[#3B82F6]/20 bg-white p-6 text-center">
+            <Sparkles className="mx-auto h-5 w-5 text-[#3B82F6]" />
             <p className="mt-3 text-sm text-[#334155]">
               Get Found. Get Trusted. Get Booked. A connected local growth system beats one-off tactics.
             </p>

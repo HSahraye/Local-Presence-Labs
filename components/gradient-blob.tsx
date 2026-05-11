@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export function GradientBlob({
   className,
-  color = "from-[#1C768F]/40 to-[#FA991C]/20",
+  color = "from-[#3B82F6]/40 to-[#7C3AED]/20",
 }: {
   className?: string;
   color?: string;

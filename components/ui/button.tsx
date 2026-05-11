@@ -5,15 +5,16 @@ import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1C768F] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-[#FA991C] text-[#032539] hover:bg-[#e88a16]",
-        secondary: "bg-[#032539] text-white hover:bg-[#043751]",
+        default:
+          "bg-gradient-to-r from-[#3B82F6] to-[#7C3AED] text-white hover:from-[#2563EB] hover:to-[#6D28D9]",
+        secondary: "bg-[#0F172A] text-white hover:bg-[#1E293B]",
         outline:
-          "border border-[#1C768F]/40 text-[#032539] bg-white hover:bg-[#1C768F]/10",
-        ghost: "text-[#032539] hover:bg-[#032539]/10",
+          "border border-[#3B82F6]/40 text-[#0F172A] bg-white hover:bg-[#3B82F6]/10",
+        ghost: "text-[#0F172A] hover:bg-[#3B82F6]/10",
       },
       size: {
         default: "h-11 px-6 py-2",

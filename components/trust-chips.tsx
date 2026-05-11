@@ -4,7 +4,7 @@ export function TrustChips({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="rounded-full border border-[#1C768F]/25 bg-white/80 px-4 py-2 text-sm font-medium text-[#032539]"
+          className="rounded-full border border-[#3B82F6]/25 bg-white/80 px-4 py-2 text-sm font-medium text-[#0F172A]"
         >
           {item}
         </li>

@@ -16,7 +16,7 @@ export function FloatingCard({
     >
       <div className="flex items-center gap-2">
         <span className="rounded-lg bg-white/15 p-1.5">
-          <Icon className="h-4 w-4 text-[#FA991C]" />
+          <Icon className="h-4 w-4 text-[#7C3AED]" />
         </span>
         <span className="font-medium">{label}</span>
       </div>

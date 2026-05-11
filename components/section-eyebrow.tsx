@@ -12,7 +12,7 @@ export function SectionEyebrow({
   return (
     <p
       className={cn(
-        "inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1C768F]",
+        "inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#3B82F6]",
         className,
       )}
     >

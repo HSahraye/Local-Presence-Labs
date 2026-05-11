@@ -12,11 +12,11 @@ export function AnimatedBorderCard({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-[#1C768F]/20 bg-white p-5 shadow-[0_8px_28px_rgba(2,25,35,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(2,25,35,0.12)]",
+        "group relative overflow-hidden rounded-2xl border border-[#3B82F6]/20 bg-white p-5 shadow-[0_8px_28px_rgba(2,25,35,0.08)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(2,25,35,0.12)]",
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1C768F] via-[#FA991C] to-[#CC4D35] opacity-80" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#3B82F6] via-[#7C3AED] to-[#7C3AED] opacity-80" />
       {children}
     </div>
   );

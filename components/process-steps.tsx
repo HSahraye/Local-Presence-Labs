@@ -6,12 +6,12 @@ export function ProcessSteps() {
       {steps.map((step, index) => (
         <li
           key={step}
-          className="rounded-2xl border border-[#1C768F]/20 bg-white p-5 text-center shadow-sm"
+          className="rounded-2xl border border-[#3B82F6]/20 bg-white p-5 text-center shadow-sm"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1C768F]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3B82F6]">
             Step {index + 1}
           </p>
-          <p className="mt-2 text-lg font-semibold text-[#032539]">{step}</p>
+          <p className="mt-2 text-lg font-semibold text-[#0F172A]">{step}</p>
         </li>
       ))}
     </ol>

@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "Local Presence Labs | Websites, Google Ads & Local SEO for Local Businesses",
-    template: "%s | Local Presence Labs",
+      "Presence Labs | Websites, Google Ads & Local SEO for Local Businesses",
+    template: "%s | Presence Labs",
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   openGraph: {
-    title: "Local Presence Labs",
+    title: "Presence Labs",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local Presence Labs",
+    title: "Presence Labs",
     description: siteConfig.description,
   },
 };

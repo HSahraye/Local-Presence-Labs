@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Local Presence Labs",
+  name: "Presence Labs",
   url: "https://localpresencelabs.com",
   contactEmail: "Sahrayeh@bayareatechhelp.com",
   contactEmailHref: "mailto:Sahrayeh@bayareatechhelp.com",
   description:
-    "Local Presence Labs helps local service businesses build professional websites, improve Google visibility, run ads, and turn visitors into calls, quote requests, and booked appointments.",
+    "Presence Labs helps local service businesses build professional websites, improve Google visibility, run ads, and turn visitors into calls, quote requests, and booked appointments.",
   keywords: [
     "local business website design",
     "Google Business Profile optimization",

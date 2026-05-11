@@ -50,9 +50,9 @@ export function ContactForm() {
   };
 
   return (
-    <div className="rounded-3xl border border-[#1C768F]/20 bg-white p-6 shadow-[0_14px_30px_rgba(2,25,35,0.08)] md:p-8">
+    <div className="rounded-3xl border border-[#3B82F6]/20 bg-white p-6 shadow-[0_14px_30px_rgba(2,25,35,0.08)] md:p-8">
       {status === "success" ? (
-        <div className="rounded-2xl border border-[#1C768F]/20 bg-[#F8FAFC] p-6 text-[#032539]">
+        <div className="rounded-2xl border border-[#3B82F6]/20 bg-[#F8FAFC] p-6 text-[#0F172A]">
           <p className="text-lg font-semibold">Message sent successfully.</p>
           <p className="mt-2 text-sm text-[#334155]">
             Thanks — your message was sent. We&apos;ll follow up soon.
@@ -86,7 +86,7 @@ export function ContactForm() {
           <FormField label="Email" name="email" type="email" required />
           <FormField label="Phone (optional)" name="phone" />
           <div className="grid gap-2">
-            <label htmlFor="message" className="text-sm font-medium text-[#032539]">
+            <label htmlFor="message" className="text-sm font-medium text-[#0F172A]">
               Message
             </label>
             <textarea
@@ -94,14 +94,14 @@ export function ContactForm() {
               name="message"
               required
               rows={4}
-              className="rounded-xl border border-[#1C768F]/25 bg-white px-4 py-3 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+              className="rounded-xl border border-[#3B82F6]/25 bg-white px-4 py-3 text-sm text-[#0F172A] outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
             />
             <p className="text-xs text-[#64748b]">
               Include your website URL and what is currently blocking growth.
             </p>
           </div>
           {status === "error" ? (
-            <p className="text-sm text-[#CC4D35]">
+            <p className="text-sm text-[#7C3AED]">
               Something went wrong. Please email{" "}
               <a className="underline" href={`mailto:${fallbackEmail}`}>
                 {fallbackEmail}
@@ -131,7 +131,7 @@ function FormField({
 }) {
   return (
     <div className="grid gap-2">
-      <label htmlFor={name} className="text-sm font-medium text-[#032539]">
+      <label htmlFor={name} className="text-sm font-medium text-[#0F172A]">
         {label}
       </label>
       <input
@@ -139,7 +139,7 @@ function FormField({
         name={name}
         type={type}
         required={required}
-        className="h-11 rounded-xl border border-[#1C768F]/25 bg-white px-4 text-sm text-[#032539] outline-none transition focus:border-[#1C768F] focus:ring-2 focus:ring-[#1C768F]/20"
+        className="h-11 rounded-xl border border-[#3B82F6]/25 bg-white px-4 text-sm text-[#0F172A] outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
       />
     </div>
   );

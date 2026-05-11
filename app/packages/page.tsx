@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 export default function PackagesPage() {
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#021923] via-[#032539] to-[#0d3447] py-16 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0F172A] to-[#1E1B4B] py-16 text-white">
         <BackgroundGrid />
         <Spotlight className="-top-20" />
         <GradientBlob className="right-6 top-8 h-44 w-44" />
         <div className="container-shell relative z-10">
-          <SectionEyebrow className="border-[#1C768F]/40 bg-[#1C768F]/15 text-[#9fdfef]">
+          <SectionEyebrow className="border-[#3B82F6]/40 bg-[#3B82F6]/15 text-[#DBEAFE]">
             Packages
           </SectionEyebrow>
           <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl">
@@ -40,7 +40,7 @@ export default function PackagesPage() {
             <EnhancedPackageCard key={pkg.name} pkg={pkg} index={index} popular={index === 1} />
           ))}
         </div>
-        <p className="mt-8 rounded-xl border border-[#1C768F]/20 bg-white p-4 text-sm text-[#334155]">
+        <p className="mt-8 rounded-xl border border-[#3B82F6]/20 bg-white p-4 text-sm text-[#334155]">
           Final pricing depends on scope, competition, service area, ad budget, and the
           current state of your online presence.
         </p>

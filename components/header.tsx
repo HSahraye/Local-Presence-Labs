@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -14,10 +15,17 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#1C768F]/15 bg-[#F8FAFC]/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#3B82F6]/15 bg-[#F8FAFC]/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="text-lg font-bold text-[#032539]">
-          Local Presence Labs
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/presence-labs-logo-horizontal.svg"
+            alt="Presence Labs"
+            width={220}
+            height={46}
+            priority
+            className="h-10 w-auto"
+          />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navigationLinks.map((link) => (
@@ -25,8 +33,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-[#1C768F]",
-                pathname === link.href ? "text-[#1C768F]" : "text-[#334155]",
+                "text-sm font-medium transition-colors hover:text-[#3B82F6]",
+                pathname === link.href ? "text-[#3B82F6]" : "text-[#334155]",
               )}
             >
               {link.label}
@@ -40,13 +48,13 @@ export function Header() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex rounded-md border border-[#1C768F]/25 p-2 text-[#032539] md:hidden"
+          className="inline-flex rounded-md border border-[#3B82F6]/25 p-2 text-[#0F172A] md:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {open ? (
-        <div className="border-t border-[#1C768F]/15 bg-white md:hidden">
+        <div className="border-t border-[#3B82F6]/15 bg-white md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4">
             {navigationLinks.map((link) => (
               <Link
@@ -55,7 +63,7 @@ export function Header() {
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm font-medium",
                   pathname === link.href
-                    ? "bg-[#1C768F]/10 text-[#1C768F]"
+                    ? "bg-[#3B82F6]/10 text-[#3B82F6]"
                     : "text-[#334155]",
                 )}
                 onClick={() => setOpen(false)}

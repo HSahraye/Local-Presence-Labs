@@ -14,7 +14,7 @@ import { caseStudies } from "@/data/caseStudies";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Selected builds and growth systems from Local Presence Labs across local businesses and full-stack platforms.",
+    "Selected builds and growth systems from Presence Labs across local businesses and full-stack platforms.",
 };
 
 const evaluationItems = [
@@ -31,12 +31,12 @@ export default function CaseStudiesPage() {
 
   return (
     <div className="pb-16">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#021923] via-[#032539] to-[#0d3447] py-16 text-white md:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0F172A] to-[#1E1B4B] py-16 text-white md:py-20">
         <BackgroundGrid />
         <Spotlight className="-top-20" />
         <GradientBlob className="-left-10 top-10 h-44 w-44" />
         <div className="container-shell relative z-10">
-          <SectionEyebrow className="border-[#1C768F]/40 bg-[#1C768F]/15 text-[#9fdfef]">
+          <SectionEyebrow className="border-[#3B82F6]/40 bg-[#3B82F6]/15 text-[#DBEAFE]">
             Case Studies
           </SectionEyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">
@@ -50,12 +50,12 @@ export default function CaseStudiesPage() {
       </section>
 
       <section className="container-shell -mt-10 relative z-20">
-        <article className="overflow-hidden rounded-3xl border border-[#1C768F]/20 bg-white shadow-[0_18px_34px_rgba(2,25,35,0.14)]">
-          <div className="h-1.5 w-full bg-gradient-to-r from-[#1C768F] via-[#FA991C] to-[#CC4D35]" />
+        <article className="overflow-hidden rounded-3xl border border-[#3B82F6]/20 bg-white shadow-[0_18px_34px_rgba(2,25,35,0.14)]">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#3B82F6] via-[#7C3AED] to-[#7C3AED]" />
           <div className="p-6 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C768F]">Featured Build</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#032539]">{featured.title}</h2>
-            <p className="mt-2 text-sm font-semibold uppercase text-[#CC4D35]">{featured.category}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3B82F6]">Featured Build</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0F172A]">{featured.title}</h2>
+            <p className="mt-2 text-sm font-semibold uppercase text-[#7C3AED]">{featured.category}</p>
             <p className="mt-4 text-[#334155]">{featured.description}</p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               <Info title="Challenge" body={featured.challenge} />
@@ -66,7 +66,7 @@ export default function CaseStudiesPage() {
               {featured.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="rounded-full border border-[#1C768F]/20 bg-[#F8FAFC] px-2.5 py-1 text-xs text-[#334155]"
+                  className="rounded-full border border-[#3B82F6]/20 bg-[#F8FAFC] px-2.5 py-1 text-xs text-[#334155]"
                 >
                   {tool}
                 </span>
@@ -114,11 +114,11 @@ export default function CaseStudiesPage() {
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {evaluationItems.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-[#1C768F]/20 bg-white p-5 shadow-sm">
-              <div className="w-fit rounded-xl bg-[#1C768F]/10 p-2.5">
-                <item.icon className="h-5 w-5 text-[#1C768F]" />
+            <article key={item.title} className="rounded-2xl border border-[#3B82F6]/20 bg-white p-5 shadow-sm">
+              <div className="w-fit rounded-xl bg-[#3B82F6]/10 p-2.5">
+                <item.icon className="h-5 w-5 text-[#3B82F6]" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#032539]">{item.title}</h3>
+              <h3 className="mt-4 text-lg font-semibold text-[#0F172A]">{item.title}</h3>
               <p className="mt-2 text-sm text-[#334155]">{item.text}</p>
             </article>
           ))}
@@ -139,8 +139,8 @@ export default function CaseStudiesPage() {
 
 function Info({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-2xl border border-[#1C768F]/15 bg-[#F8FAFC] p-4">
-      <p className="text-sm font-semibold text-[#032539]">{title}</p>
+    <div className="rounded-2xl border border-[#3B82F6]/15 bg-[#F8FAFC] p-4">
+      <p className="text-sm font-semibold text-[#0F172A]">{title}</p>
       <p className="mt-2 text-sm text-[#334155]">{body}</p>
     </div>
   );

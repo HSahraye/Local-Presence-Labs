@@ -22,10 +22,10 @@ export function BentoGrid({ items }: { items: BentoItem[] }) {
                 : ""
           }
         >
-          <div className="rounded-xl bg-[#1C768F]/10 p-2.5 w-fit">
-            <item.icon className="h-5 w-5 text-[#1C768F]" />
+          <div className="rounded-xl bg-[#3B82F6]/10 p-2.5 w-fit">
+            <item.icon className="h-5 w-5 text-[#3B82F6]" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-[#032539]">{item.title}</h3>
+          <h3 className="mt-4 text-lg font-semibold text-[#0F172A]">{item.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-[#334155]">{item.description}</p>
         </AnimatedBorderCard>
       ))}

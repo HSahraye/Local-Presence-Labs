@@ -49,7 +49,7 @@ export default function FreeAuditPage() {
           <ul className="mt-8 space-y-2">
             {reviewPoints.map((point) => (
               <li key={point} className="flex items-start gap-2 text-sm text-[#334155]">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#1C768F]" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#3B82F6]" />
                 <span>{point}</span>
               </li>
             ))}
@@ -63,8 +63,8 @@ export default function FreeAuditPage() {
 
 function InfoBlock({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-xl border border-[#1C768F]/20 bg-white p-4">
-      <p className="font-semibold text-[#032539]">{title}</p>
+    <div className="rounded-xl border border-[#3B82F6]/20 bg-white p-4">
+      <p className="font-semibold text-[#0F172A]">{title}</p>
       <p className="mt-1">{text}</p>
     </div>
   );

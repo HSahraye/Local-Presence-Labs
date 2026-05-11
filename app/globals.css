@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
+  --brand-blue: #3b82f6;
+  --brand-purple: #7c3aed;
+  --brand-ink: #0f172a;
+  --brand-muted: #334155;
   --background: #f8fafc;
-  --foreground: #032539;
+  --foreground: var(--brand-ink);
 }
 
 @theme inline {
@@ -13,7 +17,7 @@
 }
 
 * {
-  border-color: color-mix(in srgb, #1c768f 20%, transparent);
+  border-color: color-mix(in srgb, var(--brand-blue) 20%, transparent);
 }
 
 body {
